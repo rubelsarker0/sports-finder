@@ -3,6 +3,8 @@ const getAllLeagues = async () => {
 	const response = await fetch(leaguesUrl);
 	const data = await response.json();
 	displayLeagues(data.leagues);
+	document.getElementById('spinner').classList.add('d-none');
+	document.getElementById('card-container').classList.remove('d-none');
 };
 
 const displayLeagues = (leaguesData) => {
